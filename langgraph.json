@@ -1,0 +1,81 @@
+{
+  "graphs": {
+    "ra_groups_decision_graph": {
+      "description": "LangGraph-based multi-agent business decision system for RA Groups.",
+      "entrypoint": {
+        "module": "app.graph",
+        "attribute": "decision_graph"
+      },
+      "state_schema": {
+        "business_query": "string",
+        "market": "string",
+        "company_name": "string",
+        "budget": "number",
+        "timeline_months": "number",
+        "market_insights": "object",
+        "financial_analysis": "object",
+        "knowledge_summary": "object",
+        "strategy_recommendation": "object",
+        "final_report_markdown": "string"
+      },
+      "io": {
+        "inputs": [
+          "business_query",
+          "market",
+          "company_name",
+          "budget",
+          "timeline_months"
+        ],
+        "outputs": [
+          "final_report_markdown",
+          "strategy_recommendation",
+          "market_insights",
+          "financial_analysis",
+          "knowledge_summary"
+        ]
+      },
+      "nodes": [
+        {
+          "name": "market_research",
+          "module": "app.nodes.market_research",
+          "function": "market_research_node",
+          "role": "Market Research Agent"
+        },
+        {
+          "name": "financial_risk",
+          "module": "app.nodes.financial_risk",
+          "function": "financial_risk_node",
+          "role": "Financial Risk Agent"
+        },
+        {
+          "name": "knowledge_agent",
+          "module": "app.nodes.knowledge_agent",
+          "function": "knowledge_agent_node",
+          "role": "Knowledge Agent"
+        },
+        {
+          "name": "strategy_planning",
+          "module": "app.nodes.strategy_planning",
+          "function": "strategy_planning_node",
+          "role": "Strategy Planning Agent"
+        },
+        {
+          "name": "communication",
+          "module": "app.nodes.communication",
+          "function": "communication_node",
+          "role": "Communication Agent"
+        }
+      ],
+      "edges": [
+        { "from": "__start__", "to": "market_research" },
+        { "from": "__start__", "to": "financial_risk" },
+        { "from": "__start__", "to": "knowledge_agent" },
+        { "from": "market_research", "to": "strategy_planning" },
+        { "from": "financial_risk", "to": "strategy_planning" },
+        { "from": "knowledge_agent", "to": "strategy_planning" },
+        { "from": "strategy_planning", "to": "communication" },
+        { "from": "communication", "to": "__end__" }
+      ]
+    }
+  }
+}

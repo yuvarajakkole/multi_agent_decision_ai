@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Data files (if confidential)
+data/
+
+# Response files
+response_*.json
+
+# Any secret configs
+info.txt
