@@ -1,10 +1,8 @@
 # app/nodes/communication.py
 # Communication Agent: formats final Markdown report.
-
 from langchain_core.runnables import RunnableConfig
 from ..llm import get_llm
 from ..models import DecisionState
-
 
 def communication_node(state: DecisionState, config: RunnableConfig) -> DecisionState:
     """

@@ -1,0 +1,137 @@
+[
+  {
+    "request_id": "req_1774184569_2ab98f70",
+    "timestamp": "2026-03-22T13:03:24.916757+00:00",
+    "user_query": "Should RA Groups expand SME lending into UAE?",
+    "market": "uae",
+    "decision": "WAIT",
+    "confidence": 0.97,
+    "total_score": 51.9,
+    "agent_confidences": {
+      "market_agent": {
+        "confidence": 1.0,
+        "weight": 0.3,
+        "contribution": 0.3,
+        "is_reliable": true,
+        "errors": [],
+        "source": "hybrid"
+      },
+      "financial_agent": {
+        "confidence": 1.0,
+        "weight": 0.35,
+        "contribution": 0.35,
+        "is_reliable": true,
+        "errors": [],
+        "source": "hybrid"
+      },
+      "knowledge_agent": {
+        "confidence": 1.0,
+        "weight": 0.2,
+        "contribution": 0.2,
+        "is_reliable": true,
+        "errors": [],
+        "source": "hybrid"
+      },
+      "strategy_agent": {
+        "confidence": 0.8,
+        "weight": 0.15,
+        "contribution": 0.12,
+        "is_reliable": true,
+        "errors": [],
+        "source": "llm"
+      }
+    },
+    "actual_outcome": null,
+    "outcome_notes": ""
+  },
+  {
+    "request_id": "req_1774184754_e656f685",
+    "timestamp": "2026-03-22T13:06:21.857635+00:00",
+    "user_query": "Should RA Groups expand there new ai product lending into chaina?",
+    "market": "chaina",
+    "decision": "WAIT",
+    "confidence": 0.97,
+    "total_score": 45.0,
+    "agent_confidences": {
+      "market_agent": {
+        "confidence": 1.0,
+        "weight": 0.3,
+        "contribution": 0.3,
+        "is_reliable": true,
+        "errors": [],
+        "source": "hybrid"
+      },
+      "financial_agent": {
+        "confidence": 1.0,
+        "weight": 0.35,
+        "contribution": 0.35,
+        "is_reliable": true,
+        "errors": [],
+        "source": "hybrid"
+      },
+      "knowledge_agent": {
+        "confidence": 1.0,
+        "weight": 0.2,
+        "contribution": 0.2,
+        "is_reliable": true,
+        "errors": [],
+        "source": "hybrid"
+      },
+      "strategy_agent": {
+        "confidence": 0.8,
+        "weight": 0.15,
+        "contribution": 0.12,
+        "is_reliable": true,
+        "errors": [],
+        "source": "llm"
+      }
+    },
+    "actual_outcome": null,
+    "outcome_notes": ""
+  },
+  {
+    "request_id": "req_1774184857_31ffd658",
+    "timestamp": "2026-03-22T13:08:10.546599+00:00",
+    "user_query": "did we launch a new product in india which is a new ai agent helps schools to get hight marks",
+    "market": "india",
+    "decision": "WAIT",
+    "confidence": 0.97,
+    "total_score": 50.4,
+    "agent_confidences": {
+      "market_agent": {
+        "confidence": 1.0,
+        "weight": 0.3,
+        "contribution": 0.3,
+        "is_reliable": true,
+        "errors": [],
+        "source": "hybrid"
+      },
+      "financial_agent": {
+        "confidence": 1.0,
+        "weight": 0.35,
+        "contribution": 0.35,
+        "is_reliable": true,
+        "errors": [],
+        "source": "hybrid"
+      },
+      "knowledge_agent": {
+        "confidence": 1.0,
+        "weight": 0.2,
+        "contribution": 0.2,
+        "is_reliable": true,
+        "errors": [],
+        "source": "hybrid"
+      },
+      "strategy_agent": {
+        "confidence": 0.8,
+        "weight": 0.15,
+        "contribution": 0.12,
+        "is_reliable": true,
+        "errors": [],
+        "source": "llm"
+      }
+    },
+    "actual_outcome": null,
+    "outcome_notes": ""
+  }
+]

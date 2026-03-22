@@ -1,0 +1,128 @@
+
+Diagram 1 — Overall request flow (user to final report):
+
+flowchart TD
+    A([User]) -->|query + market + budget| B[Frontend\nReact Chat UI]
+    B -->|WebSocket| C[FastAPI Backend\nmain.py]
+    C --> D[WebSocket Route\n/ws/decision]
+    C --> E[HTTP Route\n/api/decision]
+    D --> F[Graph Runner\ngraph_runner.py]
+    E --> F
+    F --> G[LangGraph\nDecision Graph]
+    G -->|streaming events| B
+
+
+
+
+Diagram 2 — Multi-agent pipeline (the core LangGraph execution):
+
+flowchart TD
+    START([START]) --> SUP
+
+    SUP["Supervisor Agent
+    — understands intent
+    — returns JSON plan"]
+
+    SUP --> MA
+    MA --> FA
+    FA --> KA
+    KA --> STA
+
+    MA["Market Agent  gpt-4o-mini
+    tools: market size, competitors,
+    regulatory, trends
+    output → market_insights"]
+
+    FA["Financial Agent  gpt-4o-mini
+    tools: macro indicators, ROI,
+    credit risk
+    output → financial_analysis"]
+
+    KA["Knowledge Agent  gpt-4o-mini
+    tools: company profile, past
+    expansions, risk policies
+    output → knowledge_summary"]
+
+    STA["Strategy Agent  gpt-4o
+    pure LLM synthesis
+    scores all 3 inputs
+    output → GO / NO-GO decision"]
+
+    STA --> CA
+
+    CA["Communication Agent  gpt-4o
+    generates markdown
+    executive report
+    output → final_report"]
+
+    CA --> END([END])
+
+    style MA fill:#E6F1FB,stroke:#185FA5,color:#0C447C
+    style FA fill:#E6F1FB,stroke:#185FA5,color:#0C447C
+    style KA fill:#E6F1FB,stroke:#185FA5,color:#0C447C
+    style STA fill:#EEEDFE,stroke:#534AB7,color:#3C3489
+    style CA fill:#EEEDFE,stroke:#534AB7,color:#3C3489
+    style SUP fill:#F1EFE8,stroke:#5F5E5A,color:#444441
+
+
+
+
+
+
+Diagram 3 — Backend folder structure (how code is organized):
+
+flowchart LR
+    BE[backend/]
+
+    BE --> CFG[config/\nsettings, llm_config,\nlangsmith_config]
+    BE --> API[api/\nhttp_routes,\nwebsocket_routes]
+    BE --> GR[graph/\ndecision_graph,\ngraph_runner]
+    BE --> SUP2[supervisor/\nsupervisor_graph,\nsupervisor_prompt]
+    BE --> AGT[agents/]
+    BE --> STR[streaming/\nwebsocket_manager,\nagent_step_streamer]
+    BE --> SCH[schemas/\nagent_state_schema,\napi_models]
+    BE --> MEM[memory/\nsession_memory,\nconversation_store]
+    BE --> DAT[data/\nra_groups_knowledge.json]
+
+    AGT --> MA2[market_agent/\nagent, tools,\ngraph, prompt, schema]
+    AGT --> FA2[financial_agent/\nagent, tools,\ngraph, prompt, schema]
+    AGT --> KA2[knowledge_agent/\nagent, tools,\ngraph, prompt, schema]
+    AGT --> SA2[strategy_agent/\nagent, graph,\nprompt, schema]
+    AGT --> CA2[communication_agent/\nagent, graph,\nprompt, schema]
+
+    style AGT fill:#EEEDFE,stroke:#534AB7,color:#3C3489
+    style STR fill:#E1F5EE,stroke:#0F6E56,color:#085041
+    style CFG fill:#F1EFE8,stroke:#5F5E5A,color:#444441
+
+
+
+
+Diagram 4 — Shared AgentState (how agents communicate with each other):
+
+flowchart LR
+    AS[/"AgentState\nshared dict"/]
+
+    IN["Input fields\nuser_query\nmarket\nbudget\ntimeline_months\nrequest_id"] --> AS
+
+    AS --> SUP3["Supervisor writes\nagents_to_run\nnext_agent\nsupervisor_plan"]
+    SUP3 --> AS
+
+    AS --> MA3["Market agent writes\nmarket_insights"]
+    MA3 --> AS
+
+    AS --> FA3["Financial agent writes\nfinancial_analysis"]
+    FA3 --> AS
+
+    AS --> KA3["Knowledge agent writes\nknowledge_summary"]
+    KA3 --> AS
+
+    AS --> STA3["Strategy agent writes\nstrategy_decision\n(GO / NO-GO + score)"]
+    STA3 --> AS
+
+    AS --> CA3["Communication agent writes\nfinal_report\n(markdown string)"]
+
+    style AS fill:#FAEEDA,stroke:#854F0B,color:#633806
+
+
+
+
