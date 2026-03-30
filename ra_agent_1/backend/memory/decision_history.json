@@ -1,0 +1,290 @@
+[
+  {
+    "request_id": "req_1774719681_6d6eb93d",
+    "timestamp": "2026-03-28T17:42:09.750799+00:00",
+    "user_query": "Should RA Groups expand SME lending into UAE?",
+    "market": "uae",
+    "decision": "WAIT",
+    "confidence": 1.0,
+    "score": 33.64,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774719654_f2fb176f",
+    "timestamp": "2026-03-28T17:42:10.405799+00:00",
+    "user_query": "Should RA Groups expand SME lending into UAE?",
+    "market": "uae",
+    "decision": "GO_WITH_CONDITIONS",
+    "confidence": 1.0,
+    "score": 54.84,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774719654_f2fb176f",
+    "timestamp": "2026-03-28T17:44:55.810612+00:00",
+    "user_query": "Should we expand new ai company in the india which is basicaly a ai serviess for other costumers, it must take aprogimetly a 1000000 rupes",
+    "market": "uae",
+    "decision": "NO_GO",
+    "confidence": 1.0,
+    "score": 28.5,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774719852_2cdbec47",
+    "timestamp": "2026-03-28T17:44:57.474427+00:00",
+    "user_query": "Should we expand new ai company in the india which is basicaly a ai serviess for other costumers, it must take aprogimetly a 1000000 rupes",
+    "market": "uae",
+    "decision": "NO_GO",
+    "confidence": 1.0,
+    "score": 28.5,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774719972_6a38148f",
+    "timestamp": "2026-03-28T17:46:55.639452+00:00",
+    "user_query": "Should we expand new ai company in the india which is basicaly a ai serviess for other costumers, it must take aprogimetly a 1000000 rupes",
+    "market": "india",
+    "decision": "WAIT",
+    "confidence": 1.0,
+    "score": 47,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774719654_f2fb176f",
+    "timestamp": "2026-03-28T17:46:59.579816+00:00",
+    "user_query": "Should we expand new ai company in the india which is basicaly a ai serviess for other costumers, it must take aprogimetly a 1000000 rupes",
+    "market": "india",
+    "decision": "WAIT",
+    "confidence": 1.0,
+    "score": 36,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774719654_f2fb176f",
+    "timestamp": "2026-03-28T17:49:15.820298+00:00",
+    "user_query": "Should we expand new ai company in the india which is basically a manufacturing a GPUs and semi-cunductores ",
+    "market": "india",
+    "decision": "NO_GO",
+    "confidence": 1.0,
+    "score": 18,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774720117_b40245a2",
+    "timestamp": "2026-03-28T17:49:18.407799+00:00",
+    "user_query": "Should we expand new ai company in the india which is basically a manufacturing a GPUs and semi-cunductores ",
+    "market": "india",
+    "decision": "NO_GO",
+    "confidence": 1.0,
+    "score": 18,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774719654_f2fb176f",
+    "timestamp": "2026-03-28T17:53:40.815302+00:00",
+    "user_query": "Should we expand new ai company in the india which is basically a electric vehicle manufacturing",
+    "market": "india",
+    "decision": "NO_GO",
+    "confidence": 1.0,
+    "score": 15,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774720372_b16d245e",
+    "timestamp": "2026-03-28T17:53:40.916926+00:00",
+    "user_query": "Should we expand new ai company in the india which is basically a electric vehicle manufacturing",
+    "market": "india",
+    "decision": "NO_GO",
+    "confidence": 1.0,
+    "score": 15,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774719654_f2fb176f",
+    "timestamp": "2026-03-28T17:55:33.977658+00:00",
+    "user_query": "i want to open new startup in indea, in which field should i open, where i can get high succuss rate",
+    "market": "india",
+    "decision": "WAIT",
+    "confidence": 1.0,
+    "score": 43,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1774720491_0d5c8bbd",
+    "timestamp": "2026-03-28T17:55:33.979385+00:00",
+    "user_query": "i want to open new startup in indea, in which field should i open, where i can get high succuss rate",
+    "market": "india",
+    "decision": "NO_GO",
+    "confidence": 1.0,
+    "score": 23,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0
+      },
+      "financial_agent": {
+        "confidence": 1.0
+      },
+      "knowledge_agent": {
+        "confidence": 1.0
+      },
+      "strategy_agent": {
+        "confidence": 1.0
+      }
+    },
+    "actual_outcome": null
+  }
+]
