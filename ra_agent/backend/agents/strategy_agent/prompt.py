@@ -88,7 +88,8 @@ Here is the full agent data for your analysis.
 
 User Query:             {user_query}
 Target Market:          {market}
-Budget:                 ${budget:,.0f}
+Budget:                 {budget}
+{ignored_note}
 Timeline:               {timeline_months} months
 
 Market Agent Confidence:   {market_confidence}

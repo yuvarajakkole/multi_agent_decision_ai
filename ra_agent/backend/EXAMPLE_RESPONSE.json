@@ -1,0 +1,183 @@
+{
+  "_comment": "Example corrected API response for: 'Should RA Groups expand SME lending into UAE with a budget of 2 million USD over 18 months?'",
+
+  "request_id": "req_1712058000_a3f9c1",
+
+  "decision": {
+    "decision": "GO_WITH_CONDITIONS",
+    "adjusted_score": 54.2,
+    "market_component": 22.0,
+    "financial_component": 21.2,
+    "strategic_component": 11.0,
+    "_score_check": "22.0 + 21.2 + 11.0 = 54.2 ✓",
+    "rationale": [
+      "UAE SME lending market valued at $2.5B growing 14% annually — medium competition (source: static benchmark, confidence=0.30)",
+      "ROI 18.4%, IRR 19.1% — meets RA Groups IRR threshold (≥18%) but ROI gap = -6.6% below target",
+      "RA Groups has existing Dubai presence and prior India expansion success — strategic fit=High"
+    ],
+    "key_risks": [
+      "Market size data from static benchmarks (confidence=0.30) — actual market may differ",
+      "Financial projections based on estimated lending rate (World Bank returned no live data for AE)",
+      "Limited UAE market experience despite Dubai headquarters"
+    ],
+    "conditions": [
+      "Secure regulatory approval from UAE Central Bank before committing full budget",
+      "Establish local NBFC partnership to reduce time-to-market",
+      "Pilot with $500k before deploying remaining $1.5M"
+    ],
+    "blocking_issues": [],
+    "next_steps": [
+      "Initiate regulatory pre-application with UAE Central Bank",
+      "Identify 2-3 local NBFC partners for co-lending arrangement",
+      "Run 3-month pilot targeting 50 SME customers"
+    ],
+    "summary": "Score 54.2 triggers GO_WITH_CONDITIONS. Financial metrics narrowly meet IRR target but miss ROI target. UAE presence provides strategic advantage but data confidence is only 0.47 due to static market benchmarks — decision should be revisited when live data is available."
+  },
+
+  "confidence_report": {
+    "weighted_confidence": 0.47,
+    "label": "Low",
+    "_comment": "Confidence is LOW — not 100% — because market and financial data came from static/partial sources",
+    "per_agent": {
+      "market_agent": {
+        "confidence": 0.42,
+        "source": "partial_live",
+        "_note": "World Bank returned GDP/inflation live but lending_rate fell back to static",
+        "weight": 0.35,
+        "used": true,
+        "ignored": false
+      },
+      "financial_agent": {
+        "confidence": 0.48,
+        "source": "partial_live",
+        "_note": "Macro indicators partially live; sector sentiment from ETF proxy",
+        "weight": 0.35,
+        "used": true,
+        "ignored": false
+      },
+      "knowledge_agent": {
+        "confidence": 0.82,
+        "source": "static",
+        "_note": "RA Groups internal dataset — complete, well-structured JSON file",
+        "weight": 0.30,
+        "used": true,
+        "ignored": false
+      }
+    },
+    "ignored_agents": [],
+    "any_agent_ignored": false,
+    "is_reliable": false,
+    "_is_reliable_note": "False because confidence < 0.50 threshold on market and financial agents"
+  },
+
+  "supervisor_warnings": [
+    "[BUDGET_MISSING] No budget amount found in query text — used UI field value $2,000,000",
+    "[TIMELINE_UI] Timeline '18 months' from UI field (not mentioned in query)"
+  ],
+
+  "loop_summary": {
+    "market_retries": 1,
+    "financial_retries": 0,
+    "knowledge_retries": 0,
+    "strategy_retries": 0,
+    "total_retries": 1,
+    "ignored_agents": [],
+    "elapsed_seconds": 8.3
+  },
+
+  "market_insights": {
+    "_data_source": "partial_live",
+    "_market_data_confidence": 0.42,
+    "gdp_growth_pct": 4.1,
+    "inflation_pct": 3.2,
+    "lending_rate_pct": 5.4,
+    "_lending_rate_note": "static fallback — World Bank returned null for AE lending rate",
+    "market_size": "$2.5B",
+    "annual_growth_pct": 14,
+    "competition_level": "Medium",
+    "attractiveness_score": 58,
+    "go_signal": "Moderate Go",
+    "summary": "UAE SME lending market shows stable macroeconomic conditions with moderate competition..."
+  },
+
+  "financial_analysis": {
+    "_data_source": "partial_live",
+    "_market_data_confidence": 0.48,
+    "estimated_roi_pct": 18.4,
+    "estimated_irr_pct": 19.1,
+    "payback_months": 38,
+    "risk_level": "Medium",
+    "financial_attractiveness": "Marginal",
+    "meets_roi_target": false,
+    "meets_irr_target": true,
+    "macro_environment": "Stable",
+    "sector_sentiment": "Neutral",
+    "_sector_sentiment_source": "ETF proxy KSA — indicative only"
+  },
+
+  "knowledge_summary": {
+    "strategic_fit": "High",
+    "has_experience_in_this_market": false,
+    "available_budget_usd": 3000000,
+    "budget_within_policy": true,
+    "risk_appetite": "Medium",
+    "company_strengths": ["Digital lending platform", "AI credit scoring", "Past GCC exposure via Dubai HQ"],
+    "company_weaknesses": ["No direct UAE market experience", "Small compliance team"],
+    "past_expansions": [{"market": "India", "status": "Success", "roi_2yr": 38}]
+  },
+
+  "execution_log": [
+    {
+      "agent": "supervisor",
+      "action": "query_analysed",
+      "resolved_market": "UAE",
+      "budget_usd": 2000000,
+      "budget_note": "From UI field (no amount in query)",
+      "timeline": 18,
+      "warnings": ["[BUDGET_UI] Budget taken from UI field"]
+    },
+    {
+      "agent": "market_agent",
+      "attempt": 1,
+      "confidence": 0.55,
+      "data_source": "partial_live",
+      "issues": ["[STATIC_FALLBACK] lending_rate: live unavailable → static 5.4"],
+      "will_retry": false
+    },
+    {
+      "agent": "market_agent",
+      "attempt": 2,
+      "confidence": 0.42,
+      "_note": "MIN rule applied: prev=0.55, current=0.42 → final=0.42"
+    },
+    {
+      "agent": "financial_agent",
+      "attempt": 1,
+      "confidence": 0.48,
+      "roi": 18.4,
+      "irr": 19.1
+    },
+    {
+      "agent": "knowledge_agent",
+      "attempt": 1,
+      "confidence": 0.82
+    },
+    {
+      "agent": "strategy_agent",
+      "attempt": 1,
+      "decision": "GO_WITH_CONDITIONS",
+      "score": 54.2,
+      "market_component": 22.0,
+      "financial_component": 21.2,
+      "strategic_component": 11.0,
+      "overridden": false,
+      "ignored_agents": []
+    },
+    {
+      "agent": "communication_agent",
+      "confidence": 0.47,
+      "conf_label": "Low",
+      "chars": 2840
+    }
+  ]
+}

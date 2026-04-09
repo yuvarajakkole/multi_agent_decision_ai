@@ -1,240 +1,360 @@
 [
   {
-    "request_id": "req_1774890618_c04218bd",
-    "timestamp": "2026-03-30T17:12:28.839040+00:00",
-    "user_query": "Should RA Groups expand SME lending into UAE?",
-    "market": "uae",
-    "decision": "GO_WITH_CONDITIONS",
-    "confidence": 1.0,
-    "score": 54.1,
-    "agent_confs": {
-      "market_agent": {
-        "confidence": 1.0
-      },
-      "financial_agent": {
-        "confidence": 1.0
-      },
-      "knowledge_agent": {
-        "confidence": 1.0
-      },
-      "strategy_agent": {
-        "confidence": 1.0
-      }
-    },
-    "actual_outcome": null
-  },
-  {
-    "request_id": "req_1774890631_be1a24d4",
-    "timestamp": "2026-03-30T17:12:30.197680+00:00",
+    "request_id": "req_1775368756_72f93eaa",
+    "timestamp": "2026-04-05T06:00:46.757577+00:00",
     "user_query": "Should RA Groups expand SME lending into UAE?",
     "market": "uae",
     "decision": "WAIT",
-    "confidence": 1.0,
+    "confidence": 0.7535,
     "score": 47.1,
     "agent_confs": {
       "market_agent": {
-        "confidence": 1.0
+        "confidence": 1.0,
+        "source": "REST Countries API (live)",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
       },
       "financial_agent": {
-        "confidence": 1.0
+        "confidence": 0.51,
+        "source": "partial_live",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
       },
       "knowledge_agent": {
-        "confidence": 1.0
-      },
-      "strategy_agent": {
-        "confidence": 1.0
+        "confidence": 0.75,
+        "source": "internal_json",
+        "weight": 0.3,
+        "base_weight": 0.3,
+        "used": true,
+        "ignored": false
       }
     },
     "actual_outcome": null
   },
   {
-    "request_id": "req_1774890618_c04218bd",
-    "timestamp": "2026-03-30T17:16:25.181147+00:00",
-    "user_query": "Can we launch an AI lending platform in india?",
-    "market": "nigeria",
-    "decision": "NO_GO",
-    "confidence": 1.0,
-    "score": 23,
-    "agent_confs": {
-      "market_agent": {
-        "confidence": 1.0
-      },
-      "financial_agent": {
-        "confidence": 1.0
-      },
-      "knowledge_agent": {
-        "confidence": 1.0
-      },
-      "strategy_agent": {
-        "confidence": 1.0
-      }
-    },
-    "actual_outcome": null
-  },
-  {
-    "request_id": "req_1774890934_b40aedcd",
-    "timestamp": "2026-03-30T17:16:27.977098+00:00",
-    "user_query": "Can we launch an AI lending platform in india?",
-    "market": "nigeria",
-    "decision": "NO_GO",
-    "confidence": 1.0,
-    "score": 22,
-    "agent_confs": {
-      "market_agent": {
-        "confidence": 1.0
-      },
-      "financial_agent": {
-        "confidence": 1.0
-      },
-      "knowledge_agent": {
-        "confidence": 1.0
-      },
-      "strategy_agent": {
-        "confidence": 1.0
-      }
-    },
-    "actual_outcome": null
-  },
-  {
-    "request_id": "req_1774891026_26f140c1",
-    "timestamp": "2026-03-30T17:17:57.163939+00:00",
-    "user_query": "Give me ideas for investment in the UAE with $500k",
+    "request_id": "req_1775368764_e103d105",
+    "timestamp": "2026-04-05T06:00:54.786458+00:00",
+    "user_query": "Should RA Groups expand SME lending into UAE?",
     "market": "uae",
     "decision": "GO_WITH_CONDITIONS",
-    "confidence": 0.65,
-    "score": 61.62,
+    "confidence": 0.7535,
+    "score": 57.24,
     "agent_confs": {
       "market_agent": {
-        "confidence": 0.0
+        "confidence": 1.0,
+        "source": "REST Countries API (live)",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
       },
       "financial_agent": {
-        "confidence": 1.0
+        "confidence": 0.51,
+        "source": "partial_live",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
       },
       "knowledge_agent": {
-        "confidence": 1.0
-      },
-      "strategy_agent": {
-        "confidence": 1.0
+        "confidence": 0.75,
+        "source": "internal_json",
+        "weight": 0.3,
+        "base_weight": 0.3,
+        "used": true,
+        "ignored": false
       }
     },
     "actual_outcome": null
   },
   {
-    "request_id": "req_1774890618_c04218bd",
-    "timestamp": "2026-03-30T17:17:57.929540+00:00",
-    "user_query": "Give me ideas for investment in the UAE with $500k",
+    "request_id": "req_1775368756_72f93eaa",
+    "timestamp": "2026-04-05T06:03:51.188688+00:00",
+    "user_query": "i want to open our new branch in shrilanka, that will haddel our companys data base and servers ",
+    "market": "unknown",
+    "decision": "NO_GO",
+    "confidence": 0.5,
+    "score": 25.0,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 0.97,
+        "source": "REST Countries API (live)",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
+      },
+      "financial_agent": {
+        "confidence": 0.35,
+        "source": "deterministic",
+        "weight": 0.0,
+        "base_weight": 0.35,
+        "used": false,
+        "ignored": true
+      },
+      "knowledge_agent": {
+        "confidence": 0.75,
+        "source": "internal_json",
+        "weight": 0.3,
+        "base_weight": 0.3,
+        "used": true,
+        "ignored": false
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1775368942_79d5218b",
+    "timestamp": "2026-04-05T06:03:54.806483+00:00",
+    "user_query": "i want to open our new branch in shrilanka, that will haddel our companys data base and servers ",
+    "market": "unknown",
+    "decision": "WAIT",
+    "confidence": 0.8145,
+    "score": 33.4,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 0.97,
+        "source": "REST Countries API (live)",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
+      },
+      "financial_agent": {
+        "confidence": 1.0,
+        "source": "live_api",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
+      },
+      "knowledge_agent": {
+        "confidence": 0.75,
+        "source": "internal_json",
+        "weight": 0.3,
+        "base_weight": 0.3,
+        "used": true,
+        "ignored": false
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1775369348_d71c527d",
+    "timestamp": "2026-04-05T06:10:01.053015+00:00",
+    "user_query": "i want to expand our company india only where seeing ai growth in india, we going to provied a database servies to that comapanys is that ok",
+    "market": "india",
+    "decision": "WAIT",
+    "confidence": 0.6,
+    "score": 36.0,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0,
+        "source": "REST Countries API (live)",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
+      },
+      "financial_agent": {
+        "confidence": 0.35,
+        "source": "deterministic",
+        "weight": 0.0,
+        "base_weight": 0.35,
+        "used": false,
+        "ignored": true
+      },
+      "knowledge_agent": {
+        "confidence": 0.75,
+        "source": "internal_json",
+        "weight": 0.3,
+        "base_weight": 0.3,
+        "used": true,
+        "ignored": false
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1775368756_72f93eaa",
+    "timestamp": "2026-04-05T06:10:03.863853+00:00",
+    "user_query": "i want to expand our company india only where seeing ai growth in india, we going to provied a database servies to that comapanys is that ok",
+    "market": "india",
+    "decision": "WAIT",
+    "confidence": 0.6,
+    "score": 48.0,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0,
+        "source": "REST Countries API (live)",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
+      },
+      "financial_agent": {
+        "confidence": 0.35,
+        "source": "deterministic",
+        "weight": 0.0,
+        "base_weight": 0.35,
+        "used": false,
+        "ignored": true
+      },
+      "knowledge_agent": {
+        "confidence": 0.75,
+        "source": "internal_json",
+        "weight": 0.3,
+        "base_weight": 0.3,
+        "used": true,
+        "ignored": false
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1775749520_912eb826",
+    "timestamp": "2026-04-09T15:49:43.235919+00:00",
+    "user_query": "Should RA Groups expand SME lending into UAE?",
     "market": "uae",
-    "decision": "GO_WITH_CONDITIONS",
-    "confidence": 0.65,
-    "score": 56.88,
-    "agent_confs": {
-      "market_agent": {
-        "confidence": 0.0
-      },
-      "financial_agent": {
-        "confidence": 1.0
-      },
-      "knowledge_agent": {
-        "confidence": 1.0
-      },
-      "strategy_agent": {
-        "confidence": 1.0
-      }
-    },
-    "actual_outcome": null
-  },
-  {
-    "request_id": "req_1774890618_c04218bd",
-    "timestamp": "2026-03-30T17:20:35.846782+00:00",
-    "user_query": "Is India a good market for invoice financing in 2026?",
-    "market": "india",
     "decision": "WAIT",
-    "confidence": 0.65,
-    "score": 47.32,
+    "confidence": 0.6,
+    "score": 44.0,
     "agent_confs": {
       "market_agent": {
-        "confidence": 0.0
+        "confidence": 1.0,
+        "source": "REST Countries API (live)",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
       },
       "financial_agent": {
-        "confidence": 1.0
+        "confidence": 0.35,
+        "source": "deterministic",
+        "weight": 0.0,
+        "base_weight": 0.35,
+        "used": false,
+        "ignored": true
       },
       "knowledge_agent": {
-        "confidence": 1.0
-      },
-      "strategy_agent": {
-        "confidence": 1.0
+        "confidence": 0.75,
+        "source": "internal_json",
+        "weight": 0.3,
+        "base_weight": 0.3,
+        "used": true,
+        "ignored": false
       }
     },
     "actual_outcome": null
   },
   {
-    "request_id": "req_1774891168_e3785e06",
-    "timestamp": "2026-03-30T17:20:38.863762+00:00",
-    "user_query": "Is India a good market for invoice financing in 2026?",
-    "market": "india",
-    "decision": "GO_WITH_CONDITIONS",
-    "confidence": 0.65,
-    "score": 54.32,
-    "agent_confs": {
-      "market_agent": {
-        "confidence": 0.0
-      },
-      "financial_agent": {
-        "confidence": 1.0
-      },
-      "knowledge_agent": {
-        "confidence": 1.0
-      },
-      "strategy_agent": {
-        "confidence": 1.0
-      }
-    },
-    "actual_outcome": null
-  },
-  {
-    "request_id": "req_1774891256_c9f34b13",
-    "timestamp": "2026-03-30T17:22:28.883049+00:00",
-    "user_query": "i want to open my new ai product company in the island with the budget of 1000",
-    "market": "india",
-    "decision": "GO_WITH_CONDITIONS",
-    "confidence": 0.811,
-    "score": 62.4,
-    "agent_confs": {
-      "market_agent": {
-        "confidence": 1.0
-      },
-      "financial_agent": {
-        "confidence": 0.46
-      },
-      "knowledge_agent": {
-        "confidence": 1.0
-      },
-      "strategy_agent": {
-        "confidence": 1.0
-      }
-    },
-    "actual_outcome": null
-  },
-  {
-    "request_id": "req_1774890618_c04218bd",
-    "timestamp": "2026-03-30T17:22:29.908947+00:00",
-    "user_query": "i want to open my new ai product company in the island with the budget of 1000",
-    "market": "india",
+    "request_id": "req_1775749619_1126fb28",
+    "timestamp": "2026-04-09T15:49:45.692759+00:00",
+    "user_query": "Should RA Groups expand SME lending into UAE?",
+    "market": "uae",
     "decision": "WAIT",
-    "confidence": 0.811,
-    "score": 44.22,
+    "confidence": 0.6,
+    "score": 48.0,
     "agent_confs": {
       "market_agent": {
-        "confidence": 1.0
+        "confidence": 1.0,
+        "source": "REST Countries API (live)",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
       },
       "financial_agent": {
-        "confidence": 0.46
+        "confidence": 0.35,
+        "source": "deterministic",
+        "weight": 0.0,
+        "base_weight": 0.35,
+        "used": false,
+        "ignored": true
       },
       "knowledge_agent": {
-        "confidence": 1.0
+        "confidence": 0.75,
+        "source": "internal_json",
+        "weight": 0.3,
+        "base_weight": 0.3,
+        "used": true,
+        "ignored": false
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1775749520_912eb826",
+    "timestamp": "2026-04-09T15:51:46.389784+00:00",
+    "user_query": "Can we launch an AI lending platform in Nigeria?",
+    "market": "nigeria",
+    "decision": "NO_GO",
+    "confidence": 0.6,
+    "score": 28.0,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0,
+        "source": "REST Countries API (live)",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
       },
-      "strategy_agent": {
-        "confidence": 1.0
+      "financial_agent": {
+        "confidence": 0.35,
+        "source": "deterministic",
+        "weight": 0.0,
+        "base_weight": 0.35,
+        "used": false,
+        "ignored": true
+      },
+      "knowledge_agent": {
+        "confidence": 0.75,
+        "source": "internal_json",
+        "weight": 0.3,
+        "base_weight": 0.3,
+        "used": true,
+        "ignored": false
+      }
+    },
+    "actual_outcome": null
+  },
+  {
+    "request_id": "req_1775749843_03fc6f28",
+    "timestamp": "2026-04-09T15:51:46.531115+00:00",
+    "user_query": "Can we launch an AI lending platform in Nigeria?",
+    "market": "nigeria",
+    "decision": "NO_GO",
+    "confidence": 0.6,
+    "score": 32.0,
+    "agent_confs": {
+      "market_agent": {
+        "confidence": 1.0,
+        "source": "REST Countries API (live)",
+        "weight": 0.35,
+        "base_weight": 0.35,
+        "used": true,
+        "ignored": false
+      },
+      "financial_agent": {
+        "confidence": 0.35,
+        "source": "deterministic",
+        "weight": 0.0,
+        "base_weight": 0.35,
+        "used": false,
+        "ignored": true
+      },
+      "knowledge_agent": {
+        "confidence": 0.75,
+        "source": "internal_json",
+        "weight": 0.3,
+        "base_weight": 0.3,
+        "used": true,
+        "ignored": false
       }
     },
     "actual_outcome": null

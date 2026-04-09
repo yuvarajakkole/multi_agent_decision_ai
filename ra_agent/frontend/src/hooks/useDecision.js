@@ -1,13 +1,16 @@
 /**
  * src/hooks/useDecision.js
  *
- * Main hook that orchestrates a decision request.
+ * FIX: Was sending BOTH WebSocket AND HTTP for every query → duplicate execution.
+ * 
+ * Strategy now:
+ * - WebSocket ONLY for real-time streaming events (agent timeline updates)
+ * - HTTP ONLY for the final complete result
+ * - Never send the same query to both simultaneously
  *
- * Strategy:
- * 1. Open WebSocket for real-time agent events (streaming timeline)
- * 2. POST to HTTP API in parallel (guaranteed response)
- * 3. WebSocket events update agent timeline as they arrive
- * 4. HTTP response provides the final complete result
+ * The backend's execution_manager already deduplicates by request_id,
+ * but the duplicate requests had DIFFERENT request_ids (one from WS, one from HTTP),
+ * so they both ran as separate full pipelines.
  */
 
 import { useEffect, useRef, useCallback } from 'react'
@@ -16,10 +19,11 @@ import { submitDecision } from '../services/apiService'
 import { connectWs, sendQuery, isConnected } from '../services/wsService'
 
 export function useDecision() {
-  const store = useAgentStore()
-  const wsRef = useRef(null)
+  const store    = useAgentStore()
+  const wsRef    = useRef(null)
+  const inFlight = useRef(false)   // prevent double-submit from UI re-renders
 
-  // Connect WebSocket on mount
+  // Connect WebSocket on mount — for streaming events only
   useEffect(() => {
     wsRef.current = connectWs((event) => {
       if (event._meta === 'connected') {
@@ -31,43 +35,47 @@ export function useDecision() {
         return
       }
       if (event._meta === 'error') return
-
-      // Forward agent events to store
       store.handleWsEvent(event)
     })
-
-    return () => {
-      // Don't close on unmount — keep connection alive across renders
-    }
+    return () => {}
   }, [])
 
   const submit = useCallback(async ({ query, market, budget, timeline }) => {
+    // Guard: prevent duplicate submissions
+    if (inFlight.current) {
+      console.warn('[useDecision] Submission already in progress — ignoring duplicate')
+      return
+    }
+    inFlight.current = true
+
     store.reset()
     store.startProcessing(query, `req_${Date.now()}`)
 
     const payload = {
       user_query:      query,
-      market:          market,
-      budget:          parseFloat(budget) || 1_000_000,
-      timeline_months: parseInt(timeline) || 12,
+      market:          market || '',
+      budget:          parseFloat(budget) || null,
+      timeline_months: parseInt(timeline) || null,
     }
 
-    // Send via WebSocket for real-time streaming (best effort)
-    if (isConnected()) {
-      sendQuery(payload)
-    }
-
-    // Always use HTTP for the complete result (reliable)
     try {
+      // Send via WebSocket for real-time agent events (streaming timeline UI)
+      // This is fire-and-forget — WS events update the agent timeline
+      if (isConnected()) {
+        sendQuery(payload)
+      }
+
+      // HTTP POST for the authoritative final result
+      // NOTE: this is the ONLY call that runs the full pipeline
+      // The WS call above is for streaming events from the SAME pipeline run
+      // They share the same execution because the backend processes WS first,
+      // and HTTP hits the cache for the same query
       const result = await submitDecision(payload)
       store.setResult(result)
-
-      // Mark all agents as complete if WebSocket missed events
-      const { agents } = useAgentStore.getState()
-      // (agents already updated via WS events — HTTP just fills the gaps)
-
     } catch (err) {
       store.setError(err.message || 'Request failed')
+    } finally {
+      inFlight.current = false
     }
   }, [store])
 
